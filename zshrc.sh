@@ -1,8 +1,8 @@
 # Prompt
 ##############
 
-COL_DIR=173
-COL_GIT=222
+COL_DIR=025
+COL_GIT=229
 COL_MUT=240
 
 function branch() {
@@ -39,5 +39,6 @@ bindkey "^[b" history-beginning-search-backward # opt+right
 # Dependencies
 ##############
 
+source $HOME/.cargo/env
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
