@@ -8,6 +8,14 @@
         "selected_symbol": false,
         "axes": { "horizontal": false },
     },
+    "agent": {
+        "dock": "left",
+        "button": false,
+        "default_model": {
+            "provider": "ollama",
+            "model": "deepseek-coder-v2:latest",
+        },
+    },
     "project_panel": {
         "button": false,
         "auto_fold_dirs": false,
@@ -48,9 +56,9 @@
     "ui_font_size": 13,
     "buffer_font_size": 13,
     "base_keymap": "VSCode",
+    "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
-    "agent": { "button": false },
     "search": { "button": false },
     "autosave": "on_focus_change",
     "debugger": { "button": false },
@@ -142,9 +150,8 @@
         "text.accent": "#569CD6",
 
         // FFD700: Yellow
-        // DA70D6: Purple
-        // 179FFF: Blue
-        "accents": ["#FFD700", "#DA70D6", "#179FFF"],
+        // 179FFF: Light Blue
+        "accents": ["#FFD700", "#179FFF"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
@@ -183,7 +190,6 @@
             "string.escape": { "color": "#CE9178" },
             "string.special": { "color": "#CE9178" },
 
-            "operator": { "color": "#888888" },
             "punctuation": { "color": "#888888" },
             "punctuation.bracket": { "color": "#888888" },
             "punctuation.special": { "color": "#888888" },
@@ -200,6 +206,8 @@
 
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
+
+            "operator": { "color": "#C586C0" },
 
             "property": { "color": "#9CDCFE" },
         },
