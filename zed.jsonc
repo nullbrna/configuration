@@ -150,8 +150,9 @@
         "text.accent": "#569CD6",
 
         // FFD700: Yellow
+        // C586C0: Purple
         // 179FFF: Light Blue
-        "accents": ["#FFD700", "#179FFF"],
+        "accents": ["#FFD700", "#C586C0", "#179FFF"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
@@ -162,11 +163,17 @@
             "constant": { "color": "#CCCCCC" },
             "variable": { "color": "#CCCCCC" },
             "emphasis": { "color": "#CCCCCC" },
+            "operator": { "color": "#CCCCCC" },
             "namespace": { "color": "#CCCCCC" },
             "constructor": { "color": "#CCCCCC" },
+            "punctuation": { "color": "#CCCCCC" },
             "variable.member": { "color": "#CCCCCC" },
             "selector.pseudo": { "color": "#CCCCCC" },
+            "punctuation.bracket": { "color": "#CCCCCC" },
+            "punctuation.special": { "color": "#CCCCCC" },
+            "punctuation.delimiter": { "color": "#CCCCCC" },
             "string.special.symbol": { "color": "#CCCCCC" },
+            "punctuation.list_marker": { "color": "#CCCCCC" },
 
             "tag": { "color": "#DCDCAA" },
             "function": { "color": "#DCDCAA" },
@@ -190,12 +197,6 @@
             "string.escape": { "color": "#CE9178" },
             "string.special": { "color": "#CE9178" },
 
-            "punctuation": { "color": "#888888" },
-            "punctuation.bracket": { "color": "#888888" },
-            "punctuation.special": { "color": "#888888" },
-            "punctuation.delimiter": { "color": "#888888" },
-            "punctuation.list_marker": { "color": "#888888" },
-
             "comment": { "color": "#6A9955" },
             "predictive": { "color": "#6A9955" },
             "comment.doc": { "color": "#6A9955" },
@@ -206,8 +207,6 @@
 
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
-
-            "operator": { "color": "#C586C0" },
 
             "property": { "color": "#9CDCFE" },
         },
