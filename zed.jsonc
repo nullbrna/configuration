@@ -54,8 +54,8 @@
 
     "tab_size": 4,
     "ui_font_size": 13,
-    "buffer_font_size": 13,
     "base_keymap": "VSCode",
+    "buffer_font_size": 12.5,
     "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
@@ -67,14 +67,15 @@
     "current_line_highlight": "none",
     "scroll_beyond_last_line": "off",
     "ui_font_family": ".SystemUIFont",
+    "outline_panel": { "button": false },
     "notification_panel": { "button": false },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
+    "status_bar": { "experimental.show": false },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "terminal": { "button": false, "cursor_shape": "block" },
     "tabs": { "file_icons": false, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
-    "outline_panel": { "button": false, "auto_fold_dirs": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
 
     "experimental.theme_overrides": {
@@ -128,10 +129,10 @@
         "ignored": "#6E768175",
         "editor.line_number": "#6E768175",
 
-        // 1F1F1F: Grey
-        "editor.background": "#1F1F1F",
-        "tab.active_background": "#1F1F1F",
-        "editor.gutter.background": "#1F1F1F",
+        // 1C1C1C: Grey
+        "editor.background": "#1C1C1C",
+        "tab.active_background": "#1C1C1C",
+        "editor.gutter.background": "#1C1C1C",
 
         // 00000000: Transparent
         "scrollbar.track.border": "#00000000",
@@ -150,9 +151,9 @@
         "text.accent": "#569CD6",
 
         // FFD700: Yellow
-        // C586C0: Purple
-        // 179FFF: Light Blue
-        "accents": ["#FFD700", "#C586C0", "#179FFF"],
+        // DA70D6: Purple
+        // 4999F1: Light Blue
+        "accents": ["#FFD700", "#DA70D6", "#4999F1"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
@@ -160,14 +161,10 @@
             "label": { "color": "#CCCCCC" },
             "primary": { "color": "#CCCCCC" },
             "variant": { "color": "#CCCCCC" },
-            "constant": { "color": "#CCCCCC" },
-            "variable": { "color": "#CCCCCC" },
             "emphasis": { "color": "#CCCCCC" },
             "operator": { "color": "#CCCCCC" },
-            "namespace": { "color": "#CCCCCC" },
             "constructor": { "color": "#CCCCCC" },
             "punctuation": { "color": "#CCCCCC" },
-            "variable.member": { "color": "#CCCCCC" },
             "selector.pseudo": { "color": "#CCCCCC" },
             "punctuation.bracket": { "color": "#CCCCCC" },
             "punctuation.special": { "color": "#CCCCCC" },
@@ -183,19 +180,25 @@
             "function.method": { "color": "#DCDCAA" },
             "function.special": { "color": "#DCDCAA" },
 
-            "keyword": { "color": "#569CD6" },
-            "boolean": { "color": "#569CD6" },
-            "embedded": { "color": "#569CD6" },
-            "constant.builtin": { "color": "#569CD6" },
-            "variable.builtin": { "color": "#569CD6" },
-            "variable.special": { "color": "#569CD6" },
-
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
             "text.literal": { "color": "#CE9178" },
             "string.regex": { "color": "#CE9178" },
             "string.escape": { "color": "#CE9178" },
             "string.special": { "color": "#CE9178" },
+
+            "boolean": { "color": "#569CD6" },
+            "keyword": { "color": "#569CD6" },
+            "embedded": { "color": "#569CD6" },
+            "constant.builtin": { "color": "#569CD6" },
+            "variable.builtin": { "color": "#569CD6" },
+            "variable.special": { "color": "#569CD6" },
+
+            "constant": { "color": "#ADD7ED" },
+            "variable": { "color": "#ADD7ED" },
+            "property": { "color": "#ADD7ED" },
+            "namespace": { "color": "#ADD7ED" },
+            "variable.member": { "color": "#ADD7ED" },
 
             "comment": { "color": "#6A9955" },
             "predictive": { "color": "#6A9955" },
@@ -207,8 +210,6 @@
 
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
-
-            "property": { "color": "#9CDCFE" },
         },
     },
 }
