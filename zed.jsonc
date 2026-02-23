@@ -151,9 +151,9 @@
         "text.accent": "#569CD6",
 
         // FFD700: Yellow
-        // DA70D6: Purple
+        // F456EE: Purple
         // 4999F1: Light Blue
-        "accents": ["#FFD700", "#DA70D6", "#4999F1"],
+        "accents": ["#FFD700", "#F456EE", "#4999F1"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
@@ -187,18 +187,16 @@
             "string.escape": { "color": "#CE9178" },
             "string.special": { "color": "#CE9178" },
 
-            "boolean": { "color": "#569CD6" },
-            "keyword": { "color": "#569CD6" },
-            "embedded": { "color": "#569CD6" },
-            "constant.builtin": { "color": "#569CD6" },
-            "variable.builtin": { "color": "#569CD6" },
-            "variable.special": { "color": "#569CD6" },
-
             "constant": { "color": "#ADD7ED" },
             "variable": { "color": "#ADD7ED" },
             "property": { "color": "#ADD7ED" },
             "namespace": { "color": "#ADD7ED" },
             "variable.member": { "color": "#ADD7ED" },
+
+            "boolean": { "color": "#C586C0" },
+            "constant.builtin": { "color": "#C586C0" },
+            "variable.builtin": { "color": "#C586C0" },
+            "variable.special": { "color": "#C586C0" },
 
             "comment": { "color": "#6A9955" },
             "predictive": { "color": "#6A9955" },
@@ -207,6 +205,9 @@
             "type": { "color": "#4EC9B0" },
             "lifetime": { "color": "#4EC9B0" },
             "type.builtin": { "color": "#4EC9B0" },
+
+            "keyword": { "color": "#569CD6" },
+            "embedded": { "color": "#569CD6" },
 
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
