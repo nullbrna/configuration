@@ -12,14 +12,10 @@
         "dock": "left",
         "button": false,
         "default_model": {
+            "enable_thinking": true,
             "provider": "ollama",
-            "model": "deepseek-coder-v2:latest",
+            "model": "qwen3.5:9b",
         },
-    },
-    "project_panel": {
-        "button": false,
-        "auto_fold_dirs": false,
-        "show_diagnostics": "all",
     },
     "tab_bar": {
         "show_tab_bar_buttons": false,
@@ -73,10 +69,11 @@
     "global_lsp_settings": { "button": false },
     "status_bar": { "experimental.show": false },
     "icon_theme": "Colored Zed Icons Theme Dark",
-    "terminal": { "button": false, "cursor_shape": "block" },
     "tabs": { "file_icons": false, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
+    "project_panel": { "button": false, "show_diagnostics": "all" },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
+    "terminal": { "dock": "right", "button": false, "cursor_shape": "block" },
 
     "experimental.theme_overrides": {
         // 2B2B2B: Light Grey
