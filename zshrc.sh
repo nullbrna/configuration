@@ -1,3 +1,20 @@
+# Environment
+##############
+
+export EVC_DIR_ENVCMD="echo 'foo',echo 'bar'"
+export EVC_ASYNC_BRA_MAIN="echo 'one',echo 'two'"
+
+# Stop a single Ollama model instance. Only stops the top-most model listed.
+stoll() {
+    # First row (excluding the title row), first column.
+    local name=$(ollama ps | awk 'NR==2 {print $1}')
+
+    if [[ -n "$name" ]]; then
+        ollama stop "$name"
+        echo "stopped: $name"
+    fi
+}
+
 # Prompt
 ##############
 
