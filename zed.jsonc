@@ -177,14 +177,6 @@
             "function.method": { "color": "#DCDCAA" },
             "function.special": { "color": "#DCDCAA" },
 
-            "string": { "color": "#CE9178" },
-            "escape": { "color": "#CE9178" },
-            "text.literal": { "color": "#CE9178" },
-            "string.regex": { "color": "#CE9178" },
-            "string.escape": { "color": "#CE9178" },
-            "string.special": { "color": "#CE9178" },
-
-            "constant": { "color": "#ADD7ED" },
             "variable": { "color": "#ADD7ED" },
             "property": { "color": "#ADD7ED" },
             "namespace": { "color": "#ADD7ED" },
@@ -194,6 +186,10 @@
             "constant.builtin": { "color": "#C586C0" },
             "variable.builtin": { "color": "#C586C0" },
             "variable.special": { "color": "#C586C0" },
+
+            "string": { "color": "#CE9178" },
+            "escape": { "color": "#CE9178" },
+            "text.literal": { "color": "#CE9178" },
 
             "comment": { "color": "#6A9955" },
             "predictive": { "color": "#6A9955" },
@@ -208,6 +204,13 @@
 
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
+
+            "string.regex": { "color": "#D16969" },
+            "string.special": { "color": "#D16969" },
+
+            "string.escape": { "color": "#D7BA7D" },
+
+            "constant": { "color": "#4FC1FF" },
         },
     },
 }
