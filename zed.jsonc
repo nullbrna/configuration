@@ -63,6 +63,7 @@
     "current_line_highlight": "none",
     "scroll_beyond_last_line": "off",
     "ui_font_family": ".SystemUIFont",
+    "sticky_scroll": { "enabled": true },
     "outline_panel": { "button": false },
     "notification_panel": { "button": false },
     "collaboration_panel": { "button": false },
