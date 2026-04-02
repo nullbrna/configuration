@@ -1,8 +1,8 @@
 # Environment
 ##############
 
-export EVC_DIR_ENVCMD="echo 'foo',echo 'bar'"
-export EVC_ASYNC_BRA_MAIN="echo 'one',echo 'two'"
+export EVC_DIR_ENVCMD="echo 'foo', echo 'bar'"
+export EVC_ASYNC_BRA_MAIN="echo 'one', echo 'two'"
 
 # Stop a single Ollama model instance. Only stops the top-most model listed.
 stoll() {
@@ -18,12 +18,8 @@ stoll() {
 # Prompt
 ##############
 
-COL_DIR=025
-COL_GIT=229
-COL_MUT=240
-
-function branch() {
-    local detail
+function working_branch() {
+    local branch_colour=229 muted_colour=240 detail
 
     # Get branch-specific detail. Count lines and trim leading whitespace.
     local working=$(git status --short            2> /dev/null | grep " M\| D\|??" | wc -l | tr -d " ")
@@ -36,16 +32,20 @@ function branch() {
     if [[ $stashed != "0" ]]; then detail+="!$stashed"; fi
 
     local name=$(git symbolic-ref --short HEAD 2> /dev/null)
-    if [[ ! -z $name ]]; then echo "%F{$COL_GIT}$name%f%F{$COL_MUT}$detail%f "; fi
+    if [[ ! -z $name ]]; then echo "%F{$branch_colour}$name%f%F{$muted_colour}$detail%f "; fi
 }
 
-function prompt() {
-    local directory="%F{$COL_DIR}%1d%f"
-    PROMPT="$directory $(branch)"
+function current_directory() {
+    local directory_colour=025
+    echo "%F{$directory_colour}%1d%f"
+}
+
+function update_hook() {
+    PROMPT="$(current_directory) $(working_branch)"
 }
 
 autoload -Uz add-zsh-hook
-add-zsh-hook precmd prompt
+add-zsh-hook precmd update_hook
 
 # Keybindings
 ##############
