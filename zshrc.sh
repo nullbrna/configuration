@@ -18,44 +18,49 @@ stoll() {
 # Prompt
 ##############
 
-function working_branch() {
-    local branch_colour=229 muted_colour=240 detail
+local dir_colour=025 branch_colour=229 muted_colour=240
+
+function branch_metadata() {
+    [[ -z $BRANCH ]] && return
 
     # Get branch-specific detail. Count lines and trim leading whitespace.
-    local working=$(git status --short            2> /dev/null | grep " M\| D\|??" | wc -l | tr -d " ")
-    local staging=$(git diff   --cached --numstat 2> /dev/null                     | wc -l | tr -d " ")
-    local stashed=$(git stash  list               2> /dev/null                     | wc -l | tr -d " ")
+    local working=$(git status --short            2> /dev/null | grep -c " M\| D\|??")
+    local staging=$(git diff   --cached --numstat 2> /dev/null | grep -c "")
+    local stashed=$(git stash  list               2> /dev/null | grep -c "")
 
     # Concatenate all details if set.
-    if [[ $working != "0" ]]; then detail+="~$working"; fi
-    if [[ $staging != "0" ]]; then detail+="+$staging"; fi
-    if [[ $stashed != "0" ]]; then detail+="!$stashed"; fi
+    (( working )) && detail+="~$working"
+    (( staging )) && detail+="+$staging"
+    (( stashed )) && detail+="!$stashed"
 
-    local name=$(git symbolic-ref --short HEAD 2> /dev/null)
-    if [[ ! -z $name ]]; then echo "%F{$branch_colour}$name%f%F{$muted_colour}$detail%f "; fi
-}
-
-function current_directory() {
-    local directory_colour=025
-    echo "%F{$directory_colour}%1d%f"
+    echo "%F{$branch_colour}$BRANCH%f%F{$muted_colour}$detail%f "
 }
 
 function update_hook() {
-    PROMPT="$(current_directory) $(working_branch)"
+    BRANCH=$(git symbolic-ref --short HEAD 2> /dev/null)
+    PROMPT="%F{$dir_colour}%1d%f $(branch_metadata)"
 }
 
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd update_hook
+# Lazily load the hook function.
+autoload -Uz add-zsh-hook && add-zsh-hook precmd update_hook
 
 # Keybindings
 ##############
 
+# Rotate through the suggested auto-fill commands by recency.
 bindkey "^[f" history-beginning-search-forward  # opt+left
 bindkey "^[b" history-beginning-search-backward # opt+right
+
+function print_branch() {
+    LBUFFER+=$BRANCH
+}
+
+# Bind the function before assigning the shortcut.
+zle -N print_branch && bindkey "^B" print_branch # ctrl+b
 
 # Dependencies
 ##############
 
 source $HOME/.cargo/env
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
