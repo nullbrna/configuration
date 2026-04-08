@@ -5,20 +5,18 @@ export EVC_DIR_ENVCMD="echo 'foo', echo 'bar'"
 export EVC_ASYNC_BRA_MAIN="echo 'one', echo 'two'"
 
 # Stop a single Ollama model instance. Only stops the top-most model listed.
-stoll() {
+function stoll() {
     # First row (excluding the title row), first column.
-    local name=$(ollama ps | awk 'NR==2 {print $1}')
+    local model=$(ollama ps | awk 'NR==2 {print $1}')
 
-    if [[ -n "$name" ]]; then
-        ollama stop "$name"
-        echo "stopped: $name"
-    fi
+    [[ -z $model ]] && return
+    ollama stop "$model" && echo "stopped: $model"
 }
 
 # Prompt
 ##############
 
-local dir_colour=025 branch_colour=229 muted_colour=240
+DIR_COL=025 BRANCH_COL=229 MUTED_COL=240
 
 function branch_metadata() {
     [[ -z $BRANCH ]] && return
@@ -28,17 +26,18 @@ function branch_metadata() {
     local staging=$(git diff   --cached --numstat 2> /dev/null | grep -c "")
     local stashed=$(git stash  list               2> /dev/null | grep -c "")
 
+    local detail
     # Concatenate all details if set.
     (( working )) && detail+="~$working"
     (( staging )) && detail+="+$staging"
     (( stashed )) && detail+="!$stashed"
 
-    echo "%F{$branch_colour}$BRANCH%f%F{$muted_colour}$detail%f "
+    echo "%F{$BRANCH_COL}$BRANCH%f%F{$MUTED_COL}$detail%f "
 }
 
 function update_hook() {
     BRANCH=$(git symbolic-ref --short HEAD 2> /dev/null)
-    PROMPT="%F{$dir_colour}%1d%f $(branch_metadata)"
+    PROMPT="%F{$DIR_COL}%1d%f $(branch_metadata)"
 }
 
 # Lazily load the hook function.
