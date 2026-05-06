@@ -9,6 +9,7 @@
         "axes": { "horizontal": false },
     },
     "agent": {
+        "default_profile": "minimal",
         "dock": "left",
         "button": false,
         "default_model": {
@@ -16,6 +17,11 @@
             "provider": "ollama",
             "model": "qwen3.5:35b",
         },
+    },
+    "project_panel": {
+        "dock": "left",
+        "button": false,
+        "show_diagnostics": "all",
     },
     "tab_bar": {
         "show_tab_bar_buttons": false,
@@ -49,6 +55,7 @@
     },
 
     "tab_size": 4,
+    "code_lens": "on",
     "ui_font_size": 13,
     "base_keymap": "VSCode",
     "buffer_font_size": 12.5,
@@ -59,21 +66,19 @@
     "autosave": "on_focus_change",
     "debugger": { "button": false },
     "buffer_font_family": "SF Mono",
-    "git_panel": { "button": false },
     "current_line_highlight": "none",
     "scroll_beyond_last_line": "off",
     "ui_font_family": ".SystemUIFont",
     "sticky_scroll": { "enabled": true },
     "outline_panel": { "button": false },
-    "notification_panel": { "button": false },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
     "status_bar": { "experimental.show": false },
     "icon_theme": "Colored Zed Icons Theme Dark",
+    "git_panel": { "dock": "left", "button": false },
     "terminal": { "button": false, "cursor_shape": "block" },
     "tabs": { "file_icons": false, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
-    "project_panel": { "button": false, "show_diagnostics": "all" },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
 
     "experimental.theme_overrides": {
