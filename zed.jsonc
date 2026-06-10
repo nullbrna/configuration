@@ -13,9 +13,9 @@
         "dock": "left",
         "button": false,
         "default_model": {
-            "enable_thinking": true,
             "provider": "ollama",
             "model": "qwen3.5:35b",
+            "enable_thinking": true,
         },
     },
     "project_panel": {
@@ -28,9 +28,8 @@
         "show_nav_history_buttons": false,
     },
 
-    // Overwrite the standard formatting to convert tabs to 4 spaces so the
-    // source files align with in-editor configuration. Current file buffer is
-    // read by STDIN -> STDOUT.
+    // Overwrite formatting, converting tabs to 4 spaces.
+    // NOTE: File buffer passed through STDIN.
     "languages": {
         "Go": {
             "formatter": {
@@ -45,8 +44,7 @@
         },
     },
 
-    // Prefer standard for-loops over range by configuring the built-in LSP.
-    // NOTE: The documentation around this syntax is loose and sparse, so thanks
+    // Prefer standard loops over range by configuring the built-in LSP.
     // https://gist.github.com/mdouchement/eb8684be330a09bebe66dbf91af16516
     "lsp": {
         "gopls": {
@@ -58,10 +56,11 @@
     "code_lens": "on",
     "ui_font_size": 13,
     "base_keymap": "VSCode",
-    "buffer_font_size": 14,
+    "buffer_font_size": 13,
     "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
+    "diff_view_style": "unified",
     "search": { "button": false },
     "autosave": "on_focus_change",
     "debugger": { "button": false },
@@ -76,10 +75,11 @@
     "status_bar": { "experimental.show": false },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "git_panel": { "dock": "left", "button": false },
-    "tabs": { "file_icons": false, "show_diagnostics": "all" },
+    "terminal": { "button": false, "cursor_shape": "block" },
+    "tabs": { "file_icons": true, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
-    "terminal": { "button": false, "cursor_shape": "block", "dock": "right" },
+    "title_bar": { "show_branch_status_icon": true, "show_sign_in": false },
 
     "experimental.theme_overrides": {
         // 2B2B2B: Light Grey
@@ -112,12 +112,12 @@
 
         // CCCCCC: White
         "text": "#CCCCCC",
-        "text.muted": "#CCCCCC90",
+        "text.muted": "#CCCCCC",
         "editor.invisible": "#CCCCCC",
         "editor.foreground": "#CCCCCC",
         "text.placeholder": "#CCCCCC90",
         "terminal.foreground": "#CCCCCC",
-        "editor.active_line_number": "#CCCCCC90",
+        "editor.active_line_number": "#CCCCCC",
 
         // 256DF9: Blue
         "drop_target.background": "#256DF950",
@@ -129,13 +129,13 @@
         // 6E7681: Blue-like
         "hint": "#6E7681",
         "hidden": "#6E768175",
-        "ignored": "#6E768175",
-        "editor.line_number": "#6E768175",
+        "ignored": "#6E7681",
+        "editor.line_number": "#6E7681",
 
-        // 1C1C1C: Grey
-        "editor.background": "#1C1C1C",
-        "tab.active_background": "#1C1C1C",
-        "editor.gutter.background": "#1C1C1C",
+        // 1F1F1F: Grey
+        "editor.background": "#1F1F1F",
+        "tab.active_background": "#1F1F1F",
+        "editor.gutter.background": "#1F1F1F",
 
         // 00000000: Transparent
         "scrollbar.track.border": "#00000000",
@@ -165,31 +165,31 @@
             "variant": { "color": "#CCCCCC" },
             "emphasis": { "color": "#CCCCCC" },
             "operator": { "color": "#CCCCCC" },
-            "constructor": { "color": "#CCCCCC" },
             "punctuation": { "color": "#CCCCCC" },
             "selector.pseudo": { "color": "#CCCCCC" },
             "punctuation.bracket": { "color": "#CCCCCC" },
             "punctuation.special": { "color": "#CCCCCC" },
             "punctuation.delimiter": { "color": "#CCCCCC" },
-            "string.special.symbol": { "color": "#CCCCCC" },
             "punctuation.list_marker": { "color": "#CCCCCC" },
 
             "tag": { "color": "#DCDCAA" },
             "function": { "color": "#DCDCAA" },
             "selector": { "color": "#DCDCAA" },
             "attribute": { "color": "#DCDCAA" },
+            "constructor": { "color": "#DCDCAA" },
             "emphasis.strong": { "color": "#DCDCAA" },
             "function.method": { "color": "#DCDCAA" },
             "function.special": { "color": "#DCDCAA" },
 
-            "boolean": { "color": "#C586C0" },
-            "link_text": { "color": "#C586C0" },
-            "constant.builtin": { "color": "#C586C0" },
-            "variable.builtin": { "color": "#C586C0" },
-            "variable.special": { "color": "#C586C0" },
+            "title": { "color": "#569CD6" },
+            "boolean": { "color": "#569CD6" },
+            "keyword": { "color": "#569CD6" },
+            "embedded": { "color": "#569CD6" },
+            "constant.builtin": { "color": "#569CD6" },
+            "variable.builtin": { "color": "#569CD6" },
+            "variable.special": { "color": "#569CD6" },
 
             "variable": { "color": "#ADD7ED" },
-            "property": { "color": "#ADD7ED" },
             "namespace": { "color": "#ADD7ED" },
             "variable.member": { "color": "#ADD7ED" },
 
@@ -205,10 +205,6 @@
             "lifetime": { "color": "#4EC9B0" },
             "type.builtin": { "color": "#4EC9B0" },
 
-            "title": { "color": "#569CD6" },
-            "keyword": { "color": "#569CD6" },
-            "embedded": { "color": "#569CD6" },
-
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
 
@@ -219,6 +215,10 @@
             "link_uri": { "color": "#4FC1FF" },
 
             "string.escape": { "color": "#D7BA7D" },
+            "string.special.symbol": { "color": "#D7BA7D" },
+
+            "property": { "color": "#C586C0" },
+            "link_text": { "color": "#C586C0" },
         },
     },
 }
