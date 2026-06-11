@@ -9,7 +9,6 @@
         "axes": { "horizontal": false },
     },
     "agent": {
-        "default_profile": "minimal",
         "dock": "left",
         "button": false,
         "default_model": {
@@ -17,6 +16,7 @@
             "model": "qwen3.5:35b",
             "enable_thinking": true,
         },
+        "default_profile": "minimal",
     },
     "project_panel": {
         "dock": "left",
@@ -55,8 +55,8 @@
     "tab_size": 4,
     "code_lens": "on",
     "ui_font_size": 13,
-    "base_keymap": "VSCode",
     "buffer_font_size": 13,
+    "base_keymap": "VSCode",
     "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
