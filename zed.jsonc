@@ -54,10 +54,9 @@
 
     "tab_size": 4,
     "code_lens": "on",
-    "ui_font_size": 13,
+    "ui_font_size": 14,
     "buffer_font_size": 13,
     "base_keymap": "VSCode",
-    "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
     "diff_view_style": "unified",
@@ -153,11 +152,6 @@
         // 569CD6: Blue
         "text.accent": "#569CD6",
 
-        // FFD700: Yellow
-        // F456EE: Purple
-        // 4999F1: Light Blue
-        "accents": ["#FFD700", "#F456EE", "#4999F1"],
-
         "syntax": {
             "enum": { "color": "#CCCCCC" },
             "label": { "color": "#CCCCCC" },
@@ -189,9 +183,9 @@
             "variable.builtin": { "color": "#569CD6" },
             "variable.special": { "color": "#569CD6" },
 
-            "variable": { "color": "#ADD7ED" },
-            "namespace": { "color": "#ADD7ED" },
-            "variable.member": { "color": "#ADD7ED" },
+            "variable": { "color": "#94DBFD" },
+            "namespace": { "color": "#94DBFD" },
+            "variable.member": { "color": "#94DBFD" },
 
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
