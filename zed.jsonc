@@ -69,16 +69,17 @@
     "ui_font_family": ".SystemUIFont",
     "sticky_scroll": { "enabled": true },
     "outline_panel": { "button": false },
+    "buffer_line_height": { "custom": 2 },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
     "status_bar": { "experimental.show": false },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "git_panel": { "dock": "left", "button": false },
-    "terminal": { "button": false, "cursor_shape": "block" },
     "tabs": { "file_icons": true, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
     "title_bar": { "show_branch_status_icon": true, "show_sign_in": false },
+    "terminal": { "button": false, "cursor_shape": "block", "font_size": 12 },
 
     "experimental.theme_overrides": {
         // 2B2B2B: Light Grey
