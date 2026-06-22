@@ -57,6 +57,7 @@
     "ui_font_size": 14,
     "buffer_font_size": 13,
     "base_keymap": "VSCode",
+    "colorize_brackets": true,
     "show_whitespaces": "none",
     "cursor_shape": "underline",
     "diff_view_style": "unified",
@@ -152,6 +153,11 @@
 
         // 569CD6: Blue
         "text.accent": "#569CD6",
+
+        // FFD700: Yellow
+        // DA70D6: Purple
+        // 0078D4: Blue
+        "accents": ["#FFD700", "#DA70D6", "#0078D4"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
