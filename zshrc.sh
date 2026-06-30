@@ -4,9 +4,9 @@
 export EVC_DIR_ENVCMD="echo 'foo', echo 'bar'"
 export EVC_ASYNC_BRA_MAIN="echo 'one', echo 'two'"
 
-# Stop a single Ollama model instance. Only stops the top-most model listed.
+# Stop a single "ollama" model instance. Only stops the top-most model listed.
 function stoll() {
-    # First row (excluding the title row), first column.
+    # First row, excluding the title row, first column.
     local model=$(ollama ps | awk 'NR==2 {print $1}')
     [[ -z "$model" ]] && return
 
