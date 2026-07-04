@@ -70,7 +70,6 @@
     "ui_font_family": ".SystemUIFont",
     "sticky_scroll": { "enabled": true },
     "outline_panel": { "button": false },
-    "buffer_line_height": { "custom": 2 },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
     "status_bar": { "experimental.show": false },
