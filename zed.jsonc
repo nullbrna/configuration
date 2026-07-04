@@ -53,7 +53,6 @@
     },
 
     "tab_size": 4,
-    "code_lens": "on",
     "ui_font_size": 14,
     "buffer_font_size": 13,
     "base_keymap": "VSCode",
