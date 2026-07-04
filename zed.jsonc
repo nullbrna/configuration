@@ -28,8 +28,8 @@
         "show_nav_history_buttons": false,
     },
 
-    // Overwrite formatting, converting tabs to 4 spaces.
-    // NOTE: File buffer passed through STDIN.
+    // Overwrite formatting to convert tabs to 4 spaces.
+    // NOTE: File buffer is passed through STDIN.
     "languages": {
         "Go": {
             "formatter": {
