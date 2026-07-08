@@ -1,12 +1,8 @@
 {
-    "scrollbar": {
-        "cursors": false,
-        "git_diff": false,
-        "diagnostics": "none",
-        "selected_text": false,
-        "search_results": false,
-        "selected_symbol": false,
-        "axes": { "horizontal": false },
+    "project_panel": {
+        "dock": "left",
+        "button": false,
+        "show_diagnostics": "all",
     },
     "agent": {
         "dock": "left",
@@ -18,10 +14,20 @@
         },
         "default_profile": "minimal",
     },
-    "project_panel": {
-        "dock": "left",
-        "button": false,
-        "show_diagnostics": "all",
+    "scrollbar": {
+        "cursors": false,
+        "git_diff": false,
+        "diagnostics": "none",
+        "selected_text": false,
+        "search_results": false,
+        "selected_symbol": false,
+        "axes": { "horizontal": false },
+    },
+    "git": {
+        "inline_blame": {
+            "location": "status_bar",
+            "show_commit_summary": true,
+        }
     },
     "tab_bar": {
         "show_tab_bar_buttons": false,
@@ -71,7 +77,7 @@
     "outline_panel": { "button": false },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
-    "status_bar": { "experimental.show": false },
+    "status_bar": { "show_active_file": true },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "git_panel": { "dock": "left", "button": false },
     "tabs": { "file_icons": true, "show_diagnostics": "all" },
