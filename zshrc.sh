@@ -1,56 +1,56 @@
-# Environment
-##############
+# Environment - Symbols used in-shell.
+##########################################
 
 function stoll() {
     # First row, excluding the title row, and first column.
     local model=$(ollama ps | awk 'NR==2 {print $1}')
     [[ -z "$model" ]] && return
 
-    ollama stop "$model" && echo "stopped: $model"
+    # NOTE: Explicit prompt expansion for formatting codes. Not needed elsewhere
+    # as the global prompt does this automatically.
+    ollama stop "$model" && print -P "$(highlight 2 "Stopped") $model"
 }
 
-# Prompt
-##############
+# Prompt - Configuring the prompt.
+##########################################
 
 # $1: ANSI colour code.
 # $2: Text to be coloured.
-function as_colour() {
-    echo "%F{$1}$2%f"
+function highlight() {
+    print -r "%B%F{$1}$2%f%b"
 }
 
 # $1: Text to be wrapped in a delimiter.
-function wrap_in_section() {
-    local delim_col=242 section_col=248
-    echo "$(as_colour $delim_col "[")$(as_colour $section_col "$1")$(as_colour $delim_col "]")"
+function section() {
+    print -r "%F{242}[%f$(highlight 248 "$1")%F{242}]%f"
 }
 
 function branch_metadata() {
     [[ -z "$BRANCH" ]] && return
 
     # Get branch detail. Count lines and trim leading whitespace.
-    local working=$(git status --short            2> /dev/null | grep -c " M\| D\|??")
-    local staging=$(git diff   --cached --numstat 2> /dev/null | grep -c "")
-    local stashed=$(git stash  list               2> /dev/null | grep -c "")
+    local working=$(git status --porcelain        2>/dev/null | wc -l | tr -d ' ')
+    local staging=$(git diff   --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
+    local stashed=$(git stash  list               2>/dev/null | wc -l | tr -d ' ')
 
-    local working_col=003 staging_col=004 stashed_col=005 detail
-
-    (( working )) && detail+="$(as_colour $working_col "~$working")"
-    (( staging )) && detail+="$(as_colour $staging_col "+$staging")"
-    (( stashed )) && detail+="$(as_colour $stashed_col "!$stashed")"
+    local detail
+    (( working )) && detail+="$(highlight 3 "~$working")"
+    (( staging )) && detail+="$(highlight 4 "+$staging")"
+    (( stashed )) && detail+="$(highlight 5 "!$stashed")"
     [[ -n "$detail" ]] && detail=" $detail"
 
-    echo " $(wrap_in_section $BRANCH$detail)"
+    print " $(section "$BRANCH$detail")"
 }
 
 function update_hook() {
-    BRANCH=$(git symbolic-ref --short HEAD 2> /dev/null)
-    PROMPT="$(wrap_in_section "%1d")$(branch_metadata) "
+    BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
+    PROMPT="$(section "%1d")$(branch_metadata) "
 }
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd update_hook
 
-# Keybindings
-##############
+# Keybindings - Shortcuts used in-shell.
+##########################################
 
 bindkey "^[f" history-beginning-search-forward  # opt+left
 bindkey "^[b" history-beginning-search-backward # opt+right
@@ -61,8 +61,8 @@ function print_branch() {
 
 zle -N print_branch && bindkey "^B" print_branch # ctrl+b
 
-# Dependencies
-##############
+# Dependencies - External sourcing.
+##########################################
 
 source $HOME/.cargo/env
 
