@@ -12,7 +12,7 @@
             "model": "qwen3.5:35b",
             "enable_thinking": true,
         },
-        "default_profile": "minimal",
+        "default_profile": "write",
     },
     "scrollbar": {
         "cursors": false,
@@ -35,7 +35,7 @@
     },
 
     // Overwrite formatting to convert tabs to 4 spaces.
-    // NOTE: File buffer is passed through STDIN.
+    // NOTE: File buffer is passed through the STDIN stream.
     "languages": {
         "Go": {
             "formatter": {
@@ -51,7 +51,7 @@
     },
 
     // Prefer standard loops over range by configuring the built-in LSP.
-    // https://gist.github.com/mdouchement/eb8684be330a09bebe66dbf91af16516
+    // NOTE: https://gist.github.com/mdouchement/eb8684be330a09bebe66dbf91af16516
     "lsp": {
         "gopls": {
             "initialization_options": { "analyses": { "rangeint": false } },
