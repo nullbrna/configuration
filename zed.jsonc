@@ -160,8 +160,8 @@
 
         // FFD700: Yellow
         // DA70D6: Purple
-        // 0078D4: Blue
-        "accents": ["#FFD700", "#DA70D6", "#0078D4"],
+        // 179FFF: Blue
+        "accents": ["#FFD700", "#DA70D6", "#179FFF"],
 
         "syntax": {
             "enum": { "color": "#CCCCCC" },
