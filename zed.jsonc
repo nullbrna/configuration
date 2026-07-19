@@ -12,7 +12,7 @@
             "model": "qwen3.5:35b",
             "enable_thinking": true,
         },
-        "default_profile": "write",
+        "default_profile": "ask",
     },
     "scrollbar": {
         "cursors": false,
@@ -186,17 +186,20 @@
             "function.method": { "color": "#DCDCAA" },
             "function.special": { "color": "#DCDCAA" },
 
+            "variable": { "color": "#94DBFD" },
+            "property": { "color": "#94DBFD" },
+            "namespace": { "color": "#94DBFD" },
+            "link_text": { "color": "#94DBFD" },
+            "variable.member": { "color": "#94DBFD" },
+
+            "boolean": { "color": "#C586C0" },
+            "constant.builtin": { "color": "#C586C0" },
+            "variable.builtin": { "color": "#C586C0" },
+            "variable.special": { "color": "#C586C0" },
+
             "title": { "color": "#569CD6" },
-            "boolean": { "color": "#569CD6" },
             "keyword": { "color": "#569CD6" },
             "embedded": { "color": "#569CD6" },
-            "constant.builtin": { "color": "#569CD6" },
-            "variable.builtin": { "color": "#569CD6" },
-            "variable.special": { "color": "#569CD6" },
-
-            "variable": { "color": "#94DBFD" },
-            "namespace": { "color": "#94DBFD" },
-            "variable.member": { "color": "#94DBFD" },
 
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
@@ -221,9 +224,6 @@
 
             "string.escape": { "color": "#D7BA7D" },
             "string.special.symbol": { "color": "#D7BA7D" },
-
-            "property": { "color": "#C586C0" },
-            "link_text": { "color": "#C586C0" },
         },
     },
 }
