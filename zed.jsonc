@@ -179,7 +179,6 @@
             "function.method": { "color": "#DCDCAA" },
             "function.special": { "color": "#DCDCAA" },
 
-            "property": { "color": "#94DBFD" },
             "variable": { "color": "#94DBFD" },
             "namespace": { "color": "#94DBFD" },
             "link_text": { "color": "#94DBFD" },
@@ -190,6 +189,7 @@
             "keyword": { "color": "#569CD6" },
             "embedded": { "color": "#569CD6" },
 
+            "property": { "color": "#C586C0" },
             "constant.builtin": { "color": "#C586C0" },
             "variable.builtin": { "color": "#C586C0" },
             "variable.special": { "color": "#C586C0" },
