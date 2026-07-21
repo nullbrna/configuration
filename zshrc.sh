@@ -1,12 +1,26 @@
+# Environment
+############################################################
+
 function stoll() {
     # First row (excluding the title row) and first column.
     local model=$(ollama ps | awk 'NR==2 {print $1}')
     [[ -z "$model" ]] && return
 
     # -P: Interpret prompt expansion sequences.
-    # NOTE: Global prompt does prompt expansion automatically.
     ollama stop "$model" && print -P "$(highlight 2 "Stopped") \"$model\""
 }
+
+function print_branch() {
+    LBUFFER+="$BRANCH"
+}
+
+# NOTE: Widget needs to be registered before binding to access the buffer.
+zle -N print_branch && bindkey "^B" print_branch # ctrl+b
+bindkey "^[f" history-beginning-search-forward   # opt+left
+bindkey "^[b" history-beginning-search-backward  # opt+right
+
+# Prompt
+############################################################
 
 # $1: ANSI colour code.
 # $2: Text to be coloured.
@@ -22,15 +36,17 @@ function section() {
 function branch_metadata() {
     [[ -z "$BRANCH" ]] && return
 
-    # Get branch detail. Count lines and trim leading whitespace.
+    # 1. Get branch detail. Count lines and trim leading whitespace.
     local working=$(git status --short            2> /dev/null | grep -c " M\| D\|??")
     local staging=$(git diff   --cached --numstat 2> /dev/null | grep -c "")
     local stashed=$(git stash  list               2> /dev/null | grep -c "")
 
     local detail
+    # 2. Check each output is a positive count. If so, add a symbol prefix.
     (( working )) && detail+="$(highlight 3 "~$working")"
     (( staging )) && detail+="$(highlight 4 "+$staging")"
     (( stashed )) && detail+="$(highlight 5 "!$stashed")"
+    # 3. If there's detail, add padding after the branch name.
     [[ -n "$detail" ]] && detail=" $detail"
 
     print " $(section "$BRANCH$detail")"
@@ -44,19 +60,11 @@ function update_hook() {
 # Lazily load internal hooks. Set function to run before prompt displays.
 autoload -Uz add-zsh-hook && add-zsh-hook precmd update_hook
 
-bindkey "^[f" history-beginning-search-forward  # opt+left
-bindkey "^[b" history-beginning-search-backward # opt+right
-
-function print_branch() {
-    LBUFFER+="$BRANCH"
-}
-
-# NOTE: Widget needs to be registered before binding to access the buffer.
-zle -N print_branch && bindkey "^B" print_branch # ctrl+b
+# Dependencies
+############################################################
 
 source $HOME/.cargo/env
 # NOTE: Taken from a generated ".zprofile" file.
 source ~/.orbstack/shell/init.zsh 2>/dev/null
-
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
