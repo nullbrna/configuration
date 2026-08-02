@@ -27,15 +27,21 @@
         "inline_blame": {
             "location": "status_bar",
             "show_commit_summary": true,
-        }
+        },
     },
     "tab_bar": {
         "show_tab_bar_buttons": false,
         "show_nav_history_buttons": false,
     },
+    "title_bar": {
+        "show_branch_status_icon": true,
+        "show_sign_in": false,
+        "show_worktree_name": false,
+    },
 
     "tab_size": 4,
     "ui_font_size": 14,
+    "format_on_save": "on",
     "buffer_font_size": 13,
     "base_keymap": "VSCode",
     "show_whitespaces": "none",
@@ -57,8 +63,15 @@
     "tabs": { "file_icons": true, "show_diagnostics": "all" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
-    "title_bar": { "show_branch_status_icon": true, "show_sign_in": false },
     "terminal": { "button": false, "cursor_shape": "block", "font_size": 12 },
+
+    "lsp": {
+        // Prefer standard loops over range by configuring the built-in LSP.
+        // https://gist.github.com/mdouchement/eb8684be330a09bebe66dbf91af16516
+        "gopls": {
+            "initialization_options": { "analyses": { "rangeint": false } },
+        },
+    },
 
     "experimental.theme_overrides": {
         // 2B2B2B: Light Grey
@@ -113,10 +126,10 @@
         "ignored": "#6E7681",
         "editor.line_number": "#6E7681",
 
-        // 1F1F1F: Grey
-        "editor.background": "#1F1F1F",
-        "tab.active_background": "#1F1F1F",
-        "editor.gutter.background": "#1F1F1F",
+        // 1D1D1D: Grey
+        "editor.background": "#1D1D1D",
+        "tab.active_background": "#1D1D1D",
+        "editor.gutter.background": "#1D1D1D",
 
         // 00000000: Transparent
         "scrollbar.track.border": "#00000000",
@@ -163,6 +176,7 @@
             "namespace": { "color": "#94DBFD" },
             "link_text": { "color": "#94DBFD" },
             "variable.member": { "color": "#94DBFD" },
+            "variable.parameter": { "color": "#94DBFD" },
 
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
