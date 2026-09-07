@@ -1,9 +1,4 @@
 {
-    "terminal": {
-        "button": false,
-        "cursor_shape": "block",
-        "font_size": 12,
-    },
     "project_panel": {
         "dock": "left",
         "button": false,
@@ -12,8 +7,8 @@
     },
     "tabs": {
         "file_icons": true,
-        "show_diagnostics": "all",
         "git_status": true,
+        "show_diagnostics": "all",
     },
     "agent": {
         "dock": "left",
@@ -41,9 +36,9 @@
         "axes": { "horizontal": false },
     },
     "title_bar": {
-        "show_branch_status_icon": true,
         "show_sign_in": false,
         "show_worktree_name": false,
+        "show_branch_status_icon": true,
     },
     "tab_bar": {
         "show_tab_bar_buttons": false,
@@ -71,6 +66,7 @@
     "status_bar": { "show_active_file": true },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "git_panel": { "dock": "left", "button": false },
+    "terminal": { "button": false, "cursor_shape": "block" },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
 
@@ -177,9 +173,11 @@
             "boolean": { "color": "#569CD6" },
             "keyword": { "color": "#569CD6" },
             "embedded": { "color": "#569CD6" },
-            "variable.builtin": { "color": "#569CD6" },
-            "constant.builtin": { "color": "#569CD6" },
-            "variable.special": { "color": "#569CD6" },
+
+            "preproc": { "color": "#C586C0" },
+            "variable.builtin": { "color": "#C586C0" },
+            "constant.builtin": { "color": "#C586C0" },
+            "variable.special": { "color": "#C586C0" },
 
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
@@ -193,13 +191,12 @@
             "predictive": { "color": "#6A9955" },
             "comment.doc": { "color": "#6A9955" },
 
-            "preproc": { "color": "#C586C0" },
-            "property": { "color": "#C586C0" },
-
             "float": { "color": "#B5CEA8" },
             "number": { "color": "#B5CEA8" },
 
             "string.escape": { "color": "#D7BA7D" },
+
+            "property": { "color": "#4FC1FF" },
         },
     },
 }
