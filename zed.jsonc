@@ -14,8 +14,9 @@
         "dock": "left",
         "button": false,
         "default_model": {
-            "provider": "ollama",
-            "model": "qwen3.8:27b",
+            "effort": "medium",
+            "provider": "openai",
+            "model": "gpt-5.6-luna",
             "enable_thinking": true,
         },
         "default_profile": "write",
@@ -112,6 +113,7 @@
         "hidden": "#6E768175",
         "ignored": "#6E7681",
         "text.disabled": "#6E768190",
+        "element.active": "#6E768150",
         "editor.line_number": "#6E7681",
 
         "drop_target.background": "#256DF950",
@@ -169,15 +171,16 @@
             "emphasis.strong": { "color": "#4EC9B0" },
             "selector.pseudo": { "color": "#4EC9B0" },
 
+            "preproc": { "color": "#C586C0" },
+            "keyword.control": { "color": "#C586C0" },
+            "variable.builtin": { "color": "#C586C0" },
+            "constant.builtin": { "color": "#C586C0" },
+            "variable.special": { "color": "#C586C0" },
+
             "title": { "color": "#569CD6" },
             "boolean": { "color": "#569CD6" },
             "keyword": { "color": "#569CD6" },
             "embedded": { "color": "#569CD6" },
-
-            "preproc": { "color": "#C586C0" },
-            "variable.builtin": { "color": "#C586C0" },
-            "constant.builtin": { "color": "#C586C0" },
-            "variable.special": { "color": "#C586C0" },
 
             "string": { "color": "#CE9178" },
             "escape": { "color": "#CE9178" },
