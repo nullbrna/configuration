@@ -1,5 +1,4 @@
-# Environment
-############################################################
+export EVC_DIR_WEBSRV="docker compose down --remove-orphans --rmi local ||| docker compose up --build"
 
 function stoll() {
     local model=$(ollama ps | awk 'NR==2 {print $1}')
@@ -15,9 +14,6 @@ function show_branch() {
 zle -N show_branch && bindkey "^B" show_branch   # ctrl+b
 bindkey "^[f" history-beginning-search-forward   # opt+left
 bindkey "^[b" history-beginning-search-backward  # opt+right
-
-# Prompt
-############################################################
 
 function git_section() {
     [[ -z "$BRANCH" ]] && return
@@ -41,9 +37,6 @@ function before_command() {
 }
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd before_command
-
-# Dependencies
-############################################################
 
 source $HOME/.cargo/env
 source ~/.orbstack/shell/init.zsh 2>/dev/null
