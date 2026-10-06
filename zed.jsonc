@@ -1,25 +1,22 @@
 {
-    "project_panel": {
-        "dock": "left",
-        "button": false,
-        "show_diagnostics": "all",
-        "diagnostic_badges": true,
+    "tab_bar": {
+        "show_tab_bar_buttons": false,
+        "show_nav_history_buttons": false,
     },
     "tabs": {
         "file_icons": true,
         "git_status": true,
         "show_diagnostics": "all",
     },
-    "agent": {
+    "project_panel": {
         "dock": "left",
         "button": false,
-        "default_model": {
-            "effort": "medium",
-            "provider": "openai",
-            "model": "gpt-5.6-luna",
-            "enable_thinking": true,
-        },
-        "default_profile": "write",
+        "diagnostic_badges": true,
+    },
+    "title_bar": {
+        "show_sign_in": false,
+        "show_worktree_name": false,
+        "show_branch_status_icon": true,
     },
     "git": {
         "inline_blame": {
@@ -36,39 +33,39 @@
         "selected_symbol": false,
         "axes": { "horizontal": false },
     },
-    "title_bar": {
-        "show_sign_in": false,
-        "show_worktree_name": false,
-        "show_branch_status_icon": true,
-    },
-    "tab_bar": {
-        "show_tab_bar_buttons": false,
-        "show_nav_history_buttons": false,
+    "agent": {
+        "dock": "left",
+        "button": false,
+        "default_model": {
+            "effort": "medium",
+            "provider": "openai",
+            "model": "gpt-6-luna",
+            "enable_thinking": true,
+        },
+        "default_profile": "ask",
     },
 
     "tab_size": 4,
     "ui_font_size": 14,
     "format_on_save": "on",
     "buffer_font_size": 13,
-    "base_keymap": "VSCode",
     "cursor_shape": "block",
     "show_whitespaces": "none",
     "diff_view_style": "unified",
     "search": { "button": false },
     "autosave": "on_focus_change",
     "debugger": { "button": false },
-    "buffer_font_family": "SF Mono",
     "current_line_highlight": "none",
     "scroll_beyond_last_line": "off",
-    "ui_font_family": ".SystemUIFont",
     "outline_panel": { "button": false },
+    "buffer_font_features": { "calt": false },
     "collaboration_panel": { "button": false },
     "global_lsp_settings": { "button": false },
     "status_bar": { "show_active_file": true },
     "icon_theme": "Colored Zed Icons Theme Dark",
     "git_panel": { "dock": "left", "button": false },
     "terminal": { "button": false, "cursor_shape": "block" },
-    "toolbar": { "breadcrumbs": false, "quick_actions": false },
+    "toolbar": { "quick_actions": false, "breadcrumbs": false },
     "diagnostics": { "button": false, "inline": { "enabled": true } },
 
     "experimental.theme_overrides": {
