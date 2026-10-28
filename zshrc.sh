@@ -17,7 +17,6 @@ function git_section() {
     (( working )) && branchmeta+="%F{003}~$working%f"
     (( staging )) && branchmeta+="%F{004}+$staging%f"
     (( stashed )) && branchmeta+="%F{005}!$stashed%f"
-    # Prefix with whitespace to separate from the branch name.
     [[ -n "$branchmeta" ]] && branchmeta=" $branchmeta"
 
     print " [%F{109}$BRANCH%f$branchmeta]"
@@ -33,7 +32,6 @@ function before_command() {
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd before_command
 
-source ~/.cargo/env
 source ~/.orbstack/shell/init.zsh 2>/dev/null
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
