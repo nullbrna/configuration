@@ -27,7 +27,7 @@ function before_command() {
     ((   $? )) && local statcode=001
 
     BRANCH=$(git branch --show-current 2>/dev/null)
-    PROMPT="[%F{182}%1d%f]$(git_section) %F{$statcode}•%f "
+    PROMPT="[%F{181}%1d%f]$(git_section) %F{$statcode}•%f "
 }
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd before_command
