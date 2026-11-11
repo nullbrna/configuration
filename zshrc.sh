@@ -19,15 +19,15 @@ function git_section() {
     (( stashed )) && branchmeta+="%F{005}!$stashed%f"
     [[ -n "$branchmeta" ]] && branchmeta=" $branchmeta"
 
-    print " [%F{109}$BRANCH%f$branchmeta]"
+    print " [%F{110}$BRANCH%f$branchmeta]"
 }
 
 function before_command() {
-    (( ! $? )) && local statcode=002
-    ((   $? )) && local statcode=001
+    (( ! $? )) && local statuscode=002
+    ((   $? )) && local statuscode=001
 
     BRANCH=$(git branch --show-current 2>/dev/null)
-    PROMPT="[%F{181}%1d%f]$(git_section) %F{$statcode}•%f "
+    PROMPT="[%F{103}%1d%f]$(git_section) %F{$statuscode}•%f "
 }
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd before_command
