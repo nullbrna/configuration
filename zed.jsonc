@@ -150,11 +150,9 @@
         "players": [{ "selection": "#256DF950", "cursor": "#256DF9" }],
 
         "syntax": {
-            "float": { "color": "#92966B" },
-            "number": { "color": "#92966B" },
-            "boolean": { "color": "#92966B" },
-
-            "operator": { "color": "#B9817C" },
+            "float": { "color": "#B9817C" },
+            "number": { "color": "#B9817C" },
+            "boolean": { "color": "#B9817C" },
 
             "comment": { "color": "#5E6670" },
             "predictive": { "color": "#5E6670" },
@@ -169,11 +167,11 @@
             "title": { "color": "#79A7B0" },
             "lifetime": { "color": "#79A7B0" },
             "type.builtin": { "color": "#79A7B0" },
-            "emphasis.strong": { "color": "#79A7B0" },
             "selector.pseudo": { "color": "#79A7B0" },
 
             "keyword": { "color": "#8F88A6" },
             "primary": { "color": "#8F88A6" },
+            "operator": { "color": "#8F88A6" },
             "embedded": { "color": "#8F88A6" },
             "emphasis": { "color": "#8F88A6" },
             "keyword.control": { "color": "#8F88A6" },
@@ -193,7 +191,6 @@
 
             "label": { "color": "#A3B0B5" },
             "variant": { "color": "#A3B0B5" },
-            "link_uri": { "color": "#A3B0B5" },
             "variable": { "color": "#A3B0B5" },
             "constant": { "color": "#A3B0B5" },
             "namespace": { "color": "#A3B0B5" },
@@ -201,9 +198,11 @@
             "variable.parameter": { "color": "#A3B0B5" },
 
             "property": { "color": "#B09E8B" },
+            "link_uri": { "color": "#B09E8B" },
             "string.regex": { "color": "#B09E8B" },
             "string.escape": { "color": "#B09E8B" },
             "string.special": { "color": "#B09E8B" },
+            "emphasis.strong": { "color": "#B09E8B" },
             "string.special.symbol": { "color": "#B09E8B" },
 
             "punctuation": { "color": "#6B7480" },
