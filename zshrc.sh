@@ -19,19 +19,20 @@ function git_section() {
     (( stashed )) && branchmeta+="%F{005}!$stashed%f"
     [[ -n "$branchmeta" ]] && branchmeta=" $branchmeta"
 
-    print " [%F{110}$BRANCH%f$branchmeta]"
+    print " [%F{139}$BRANCH%f$branchmeta]"
 }
 
 function before_command() {
-    (( ! $? )) && local statuscode=002
-    ((   $? )) && local statuscode=001
+    (( ! $? )) && local statcode=002
+    ((   $? )) && local statcode=001
 
     BRANCH=$(git branch --show-current 2>/dev/null)
-    PROMPT="[%F{103}%1d%f]$(git_section) %F{$statuscode}•%f "
+    PROMPT="[%F{117}%1d%f]$(git_section) %F{$statcode}•%f "
 }
 
 autoload -Uz add-zsh-hook && add-zsh-hook precmd before_command
 
+source ~/.cargo/env
 source ~/.orbstack/shell/init.zsh 2>/dev/null
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
